@@ -128,7 +128,7 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;pos
   <div class="hero-title">HDRV<br>STUDIO</div>
   <div class="hero-tag">Indonesia's First AI-Native Game Studio</div>
   <p class="hero-sub reveal">Two worlds. 24 AI agents. Infinite imagination. We don't just build games — we reimagine how games are made. From Jakarta to the world.</p>
-  <div class="badge reveal">✦ BUILT WITH CLAUDE ✦</div>
+  <div class="badge reveal">✦ AI-NATIVE STUDIO ✦</div>
 </section>
 
 <section class="games-section">
@@ -145,7 +145,6 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;pos
     <div class="stat"><div class="v" id="s1">0</div><div class="l">Games Shipped</div></div>
     <div class="stat"><div class="v" id="s2">0</div><div class="l">AI Agents</div></div>
     <div class="stat"><div class="v" id="s3">0</div><div class="l">Active IPs</div></div>
-    <div class="stat"><div class="v" id="s4">0</div><div class="l">% Claude Built</div></div>
   </div>
 </section>
 
@@ -167,7 +166,7 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;pos
   <a href="mailto:hello@hdrv.studio" class="cta-btn reveal">hello@hdrv.studio</a>
 </section>
 
-<footer><p>© 2026 HDRV Studio · Jakarta, Indonesia · Built with Claude</p></footer>
+<footer><p>© 2026 HDRV Studio · Jakarta, Indonesia</p></footer>
 </div>
 
 <div class="hint" id="hint"><div class="mouse"></div>SCROLL TO EXPLORE</div>
@@ -232,7 +231,7 @@ window.addEventListener('scroll',()=>{
 
 // ===== COUNTERS =====
 let done=false;
-new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting&&!done){done=true;anim('s1',12,1800);anim('s2',24,1800);anim('s3',2,1800);anim('s4',100,2000)}})).observe(document.querySelector('.stats-row'));
+new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting&&!done){done=true;anim('s1',12,1800);anim('s2',24,1800);anim('s3',2,1800)}})).observe(document.querySelector('.stats-row'));
 function anim(id,t,d){const el=document.getElementById(id);if(!el)return;let c=0;const s=Math.ceil(t/(d/16));const iv=setInterval(()=>{c+=s;if(c>=t){el.textContent=t+(t===100?'%':'');clearInterval(iv)}else el.textContent=c+(t===100?'%':'')},16)}
 
 // ===== REVEAL =====
