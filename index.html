@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HDRV Studio — The Future of Game Development</title>
+<meta name="description" content="Can you believe Claude built this? HDRV Studio — Indonesia's AI-native game studio. 24 AI agents. One session.">
+<meta property="og:title" content="HDRV Studio — Built by Claude">
+<meta property="og:description" content="Scroll-driven cinematic site. Generated end-to-end by AI.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%239B6CFF'/><text x='50%25' y='58%25' text-anchor='middle' fill='white' font-family='system-ui' font-weight='900' font-size='20'>H</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#06060f;--surface:rgba(255,255,255,.035);
+  --text:#f0e6ff;--text2:rgba(210,200,240,.55);
+  --accent:#9B6CFF;--accent2:#FF6B9D;
+  --cyan:#53E6FF;--gold:#FFB830;
+  --transition:.4s cubic-bezier(.22,1,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto;display:block}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',-apple-system,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Fredoka',-apple-system,sans-serif;letter-spacing:-.015em}
+
+/* ============ CANVAS STARFIELD ============ */
+#starfield{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* ============ FILM GRAIN + VIGNETTE ============ */
+.film-grain{
+  position:fixed;inset:0;z-index:500;pointer-events:none;opacity:.04;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.vignette{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(circle at 50% 45%,transparent 50%,rgba(6,6,15,.75) 100%);
+}
+
+/* ============ SCROLL PROGRESS ============ */
+.scroll-progress{
+  position:fixed;top:0;left:0;z-index:200;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--cyan));
+  transition:width .08s linear;
+}
+
+/* ============ NAVIGATION ============ */
+nav{
+  position:fixed;top:0;width:100%;z-index:100;
+  padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;
+  transition:all var(--transition);
+}
+nav.scrolled{
+  background:rgba(6,6,15,.88);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);padding:.75rem 2.5rem;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.logo{font-size:1.45rem;font-weight:700;color:#fff;text-decoration:none;z-index:101}
+.logo span{color:var(--accent2)}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.82rem;font-weight:600;transition:color .3s}
+.nav-links a:hover{color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:26px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;z-index:2;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:2rem;
+}
+.hero-eyebrow{
+  font-size:.7rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.22em;color:var(--cyan);margin-bottom:2rem;
+  animation:fadeUp .9s ease both;
+}
+.hero h1{
+  font-size:clamp(2.6rem,7.5vw,5.5rem);font-weight:700;line-height:1.04;
+  max-width:860px;animation:fadeUp .9s .12s ease both;
+}
+.hero h1 .hl{
+  background:linear-gradient(135deg,var(--accent),var(--accent2) 50%,var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  background-size:200% 200%;
+  animation:shimmer 4s ease-in-out infinite alternate;
+}
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+.hero-sub{
+  font-size:1.1rem;color:var(--text2);max-width:540px;
+  margin:2rem auto 3rem;line-height:1.85;font-weight:500;
+  animation:fadeUp .9s .24s ease both;
+}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .9s .36s ease both}
+.cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:1rem 2.4rem;border-radius:50px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;font-weight:700;text-decoration:none;font-size:.95rem;
+  transition:transform .25s,box-shadow .25s;
+  box-shadow:0 8px 32px rgba(155,108,255,.25);
+  isolation:isolate;
+}
+.cta::before{
+  content:'';position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  opacity:0;transition:opacity .3s;
+}
+.cta:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(155,108,255,.4)}
+.cta:hover::before{opacity:1}
+.cta-ghost{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:1rem 2.4rem;border-radius:50px;
+  border:1.5px solid rgba(255,255,255,.18);color:#fff;
+  font-weight:600;text-decoration:none;font-size:.95rem;
+  transition:all var(--transition);background:rgba(255,255,255,.02);
+  backdrop-filter:blur(8px);
+}
+.cta-ghost:hover{border-color:var(--accent);color:var(--accent);background:rgba(155,108,255,.08)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============ SCROLL HINT ============ */
+.scroll-hint{
+  position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:var(--text2);font-size:.7rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:.1em;animation:fadeUp 1s .6s ease both,pulse 2s 1.5s ease-in-out infinite;
+}
+.scroll-hint .arrow{
+  width:20px;height:20px;border-right:2px solid var(--text2);
+  border-bottom:2px solid var(--text2);transform:rotate(45deg);
+}
+@keyframes pulse{0%,100%{opacity:.4;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(8px)}}
+
+/* ============ 3D TUNNEL ============ */
+.tunnel-section{
+  position:relative;z-index:2;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.tunnel-container{perspective:900px;width:100%;max-width:800px;margin:0 auto}
+.tunnel-ring{
+  width:100%;height:360px;position:relative;transform-style:preserve-3d;
+  animation:rotateTunnel 35s linear infinite;
+}
+@keyframes rotateTunnel{to{transform:rotateY(360deg)}}
+.tunnel-ring::before{
+  content:'';position:absolute;inset:12%;
+  border:1.5px solid rgba(155,108,255,.18);border-radius:50%;
+  transform:rotateX(72deg);
+  box-shadow:0 0 80px rgba(155,108,255,.08),inset 0 0 80px rgba(83,230,255,.04);
+}
+.tunnel-ring::after{
+  content:'';position:absolute;inset:28%;
+  border:1px solid rgba(83,230,255,.12);border-radius:50%;
+  transform:rotateX(72deg);
+}
+.tunnel-dots{
+  position:absolute;inset:20%;border-radius:50%;transform:rotateX(72deg);
+}
+.tunnel-dots span{
+  position:absolute;width:4px;height:4px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 12px var(--accent);
+}
+.tunnel-center{
+  position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;z-index:3;flex-direction:column;
+  text-align:center;padding:2rem;pointer-events:none;
+}
+.tunnel-center h2{
+  font-size:clamp(1.8rem,5vw,3.2rem);font-weight:700;color:#fff;margin-bottom:1rem;
+}
+.tunnel-center h2 span{
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.tunnel-center p{color:var(--text2);font-size:1rem;max-width:420px;line-height:1.75}
+
+/* ============ STATS ============ */
+.stats-section{position:relative;z-index:2;padding:6rem 2rem;text-align:center}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:900px;margin:0 auto;
+}
+.stat-card{
+  padding:2.5rem 1.2rem;border-radius:20px;
+  background:var(--surface);border:1px solid rgba(255,255,255,.05);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  transition:transform var(--transition),border-color var(--transition);
+}
+.stat-card:hover{transform:translateY(-5px);border-color:rgba(155,108,255,.25)}
+.stat-num{
+  font-size:2.8rem;font-weight:700;font-family:'Fredoka',sans-serif;
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;
+}
+.stat-label{
+  font-size:.72rem;color:var(--text2);text-transform:uppercase;
+  letter-spacing:.08em;font-weight:700;margin-top:.6rem;
+}
+
+/* ============ GLASS CARDS ============ */
+.glass-section{position:relative;z-index:2;padding:4rem 2rem 8rem;max-width:1200px;margin:0 auto}
+.glass-header{text-align:center;margin-bottom:4rem}
+.glass-header h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:.8rem}
+.glass-header h2 span{
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.glass-header p{color:var(--text2);max-width:480px;margin:0 auto}
+.glass-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.glass-card{
+  padding:2.5rem 1.8rem;border-radius:22px;
+  background:rgba(255,255,255,.025);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.05);
+  transition:all var(--transition);
+}
+.glass-card:hover{
+  transform:translateY(-6px);border-color:rgba(155,108,255,.22);
+  background:rgba(255,255,255,.045);
+}
+.glass-card-icon{font-size:1.8rem;margin-bottom:1rem}
+.glass-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.6rem}
+.glass-card p{color:var(--text2);font-size:.85rem;line-height:1.65}
+
+/* ============ CTA FOOTER ============ */
+.cta-footer{position:relative;z-index:2;text-align:center;padding:8rem 2rem 6rem}
+.cta-footer h2{
+  font-size:clamp(2rem,5.5vw,3.5rem);margin-bottom:2rem;line-height:1.15;
+}
+.cta-footer h2 span{
+  background:linear-gradient(135deg,var(--accent2),var(--accent),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ============ PARTICLES ============ */
+.page-particles{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.page-particles .dot{
+  position:absolute;width:1.5px;height:1.5px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 8px var(--accent);
+  animation:rise 12s linear infinite;opacity:0;
+}
+@keyframes rise{
+  0%{transform:translateY(105vh) scale(.5);opacity:0}
+  8%{opacity:.5}
+  92%{opacity:.5}
+  100%{transform:translateY(-10vh) scale(1.5);opacity:0}
+}
+
+/* ============ BACK TO TOP ============ */
+.btt{
+  position:fixed;bottom:2rem;right:2rem;z-index:150;width:48px;height:48px;
+  border-radius:14px;background:var(--accent);color:#fff;border:none;
+  cursor:pointer;display:grid;place-items:center;font-size:1.2rem;
+  box-shadow:0 8px 28px rgba(155,108,255,.3);
+  transition:all var(--transition);opacity:0;transform:translateY(20px);pointer-events:none;
+}
+.btt.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.btt:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(155,108,255,.45)}
+
+/* ============ FOOTER ============ */
+footer{position:relative;z-index:2;text-align:center;padding:3rem 2rem;color:var(--text2);font-size:.78rem;border-top:1px solid rgba(255,255,255,.03);font-weight:500}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:768px){
+  .nav-links{display:none;position:fixed;inset:0;background:rgba(6,6,15,.97);flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;z-index:100;backdrop-filter:blur(20px)}
+  .nav-links.open{display:flex}.nav-links a{font-size:1.15rem}
+  .hamburger{display:flex}nav{padding:1rem 1.5rem}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .glass-grid{grid-template-columns:1fr}
+  .tunnel-ring{height:240px}
+  .hero h1{font-size:2.2rem}.hero-sub{font-size:.95rem}
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:1fr}.stat-card{padding:2rem 1rem}
+  .hero-ctas{flex-direction:column;align-items:center}
+  .stat-num{font-size:2.2rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}.page-particles{display:none}#starfield{display:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<div class="film-grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="page-particles" id="particles" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a href="#" class="logo">HDRV<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#">Home</a></li>
+    <li><a href="#tunnel">Studio</a></li>
+    <li><a href="#stats">Impact</a></li>
+    <li><a href="#glass">Pipeline</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="home">
+  <div class="hero-eyebrow">✦ AI-Native Game Studio ✦</div>
+  <h1>Can you believe<br><span class="hl">Claude</span> built this?</h1>
+  <p class="hero-sub">HDRV Studio is reimagining game development — pairing human creativity with a 24-agent AI pipeline. Every pixel, every animation, every line of code. Generated in one session.</p>
+  <div class="hero-ctas">
+    <a href="#glass" class="cta">See the Pipeline →</a>
+    <a href="mailto:hello@hdrv.studio" class="cta-ghost">Partner With Us</a>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><div class="arrow"></div></div>
+</section>
+
+<!-- ====== 3D TUNNEL ====== -->
+<section class="tunnel-section" id="tunnel">
+  <div class="tunnel-container">
+    <div class="tunnel-ring">
+      <div class="tunnel-dots" id="tunnelDots"></div>
+    </div>
+    <div class="tunnel-center">
+      <h2>Where <span>AI</span> Meets<br>Imagination</h2>
+      <p>24 specialized AI agents — from concept art to QA. Building what was never possible before.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== STATS ====== -->
+<section class="stats-section" id="stats">
+  <div class="stats-grid" id="statsGrid">
+    <div class="stat-card"><div class="stat-num" data-target="12">0</div><div class="stat-label">Games Shipped</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="24">0</div><div class="stat-label">AI Agents</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="2">0</div><div class="stat-label">Active IPs</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="100">0</div><div class="stat-label">% Claude Built</div></div>
+  </div>
+</section>
+
+<!-- ====== GLASS CARDS ====== -->
+<section class="glass-section" id="glass">
+  <div class="glass-header">
+    <h2>The <span>24-Agent</span> Pipeline</h2>
+    <p>From concept to ship — every game passes through our AI-native production system.</p>
+  </div>
+  <div class="glass-grid">
+    <div class="glass-card"><div class="glass-card-icon">🔍</div><h3>Creative Direction</h3><p>Max, our AI Studio Director, researches and designs every game concept with precision.</p></div>
+    <div class="glass-card"><div class="glass-card-icon">⚡</div><h3>Rapid Build</h3><p>Claude Code agents build MVPs in hours — full games, not prototypes.</p></div>
+    <div class="glass-card"><div class="glass-card-icon">✨</div><h3>Quality Review</h3><p>Codex agents hunt bugs, edge cases, and polish every interaction to perfection.</p></div>
+    <div class="glass-card"><div class="glass-card-icon">🚀</div><h3>Ship & Learn</h3><p>Deploy instantly. Iterate based on real play data from real families.</p></div>
+    <div class="glass-card"><div class="glass-card-icon">🎨</div><h3>Art Generation</h3><p>AI-powered concept art and assets. Consistent style, infinite variations, zero wait.</p></div>
+    <div class="glass-card"><div class="glass-card-icon">📊</div><h3>Analytics Engine</h3><p>Real-time play data informs every iteration. We know what kids love before they do.</p></div>
+  </div>
+</section>
+
+<!-- ====== CTA FOOTER ====== -->
+<section class="cta-footer">
+  <h2>Ready to build<br><span>something magical?</span></h2>
+  <a href="mailto:hello@hdrv.studio" class="cta">hello@hdrv.studio</a>
+</section>
+
+<footer><p>© 2026 HDRV Studio · Jakarta, Indonesia · Built in one session with Claude</p></footer>
+<button class="btt" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+/* ===== STARFIELD CANVAS ===== */
+(function(){
+  const c=document.getElementById('starfield'),ctx=c.getContext('2d');
+  let stars=[],w=c.width=window.innerWidth,h=c.height=window.innerHeight;
+  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+  window.addEventListener('resize',resize);
+  for(let i=0;i<250;i++)stars.push({x:Math.random()*w,y:Math.random()*h,r:.4+Math.random()*1.6,b:Math.random()*Math.PI*2,s:.15+Math.random()*.45});
+  function draw(){
+    ctx.clearRect(0,0,w,h);const t=Date.now()*.0001;
+    stars.forEach(s=>{
+      s.y-=s.s;if(s.y<-5){s.y=h+5;s.x=Math.random()*w}
+      const twinkle=.5+.5*Math.sin(t+s.b);
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r*twinkle,0,Math.PI*2);
+      ctx.fillStyle=`rgba(200,180,255,${.25+.45*twinkle})`;ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ===== PARTICLES ===== */
+(function(){
+  const p=document.getElementById('particles');
+  for(let i=0;i<22;i++){
+    const d=document.createElement('div');d.className='dot';
+    d.style.cssText=`left:${Math.random()*100}%;animation-delay:${Math.random()*-14}s;animation-duration:${10+Math.random()*8}s`;
+    p.appendChild(d);
+  }
+})();
+
+/* ===== TUNNEL DOTS ===== */
+(function(){
+  const container=document.getElementById('tunnelDots');
+  for(let i=0;i<40;i++){
+    const d=document.createElement('span');
+    const angle=(i/40)*Math.PI*2,r=38+Math.random()*12;
+    d.style.cssText=`left:${50+r*Math.cos(angle)}%;top:${50+r*Math.sin(angle)}%`;
+    container.appendChild(d);
+  }
+})();
+
+/* ===== SCROLL PROGRESS ===== */
+const pb=document.getElementById('scrollProgress');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement,s=h.scrollTop,d=h.scrollHeight-h.clientHeight;
+  pb.style.width=d?(s/d)*100+'%':'0%';
+});
+
+/* ===== NAV ===== */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50));
+
+/* ===== MOBILE MENU ===== */
+const hamburger=document.getElementById('hamburger'),navList=document.getElementById('navLinks');
+hamburger.addEventListener('click',()=>{navList.classList.toggle('open');hamburger.classList.toggle('active')});
+navList.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{navList.classList.remove('open');hamburger.classList.remove('active')}));
+
+/* ===== BACK TO TOP ===== */
+const btt=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>btt.classList.toggle('visible',window.scrollY>700));
+btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ===== COUNTER ANIMATION ===== */
+let counted=false;
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting&&!counted){counted=true;animateCounters()}});
+},{threshold:.35}).observe(document.getElementById('statsGrid'));
+
+function animateCounters(){
+  document.querySelectorAll('.stat-num[data-target]').forEach(el=>{
+    const target=parseInt(el.dataset.target),duration=2000;
+    const step=Math.ceil(target/(duration/16));let current=0;
+    const iv=setInterval(()=>{
+      current+=step;
+      if(current>=target){el.textContent=target+(target===100?'%':'');clearInterval(iv)}
+      else el.textContent=current+(target===100?'%':'');
+    },16);
+  });
+}
+</script>
+</body>
+</html>
