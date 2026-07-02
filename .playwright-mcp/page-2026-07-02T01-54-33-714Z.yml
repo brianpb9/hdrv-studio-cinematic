@@ -1,0 +1,95 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e6]: Scroll to play
+  - main [ref=f1e7]:
+    - generic [ref=f1e9]:
+      - heading "Can you believe Claude built this?" [level=1] [ref=f1e10]:
+        - generic [ref=f1e11]:
+          - generic [ref=f1e12]: C
+          - generic [ref=f1e13]: a
+          - generic [ref=f1e14]: "n"
+        - generic [ref=f1e15]:
+          - generic [ref=f1e16]: "Y"
+          - generic [ref=f1e17]: o
+          - generic [ref=f1e18]: u
+        - generic [ref=f1e19]:
+          - generic [ref=f1e20]: B
+          - generic [ref=f1e21]: e
+          - generic [ref=f1e22]: l
+          - generic [ref=f1e23]: i
+          - generic [ref=f1e24]: e
+          - generic [ref=f1e25]: v
+          - generic [ref=f1e26]: e
+        - generic [ref=f1e27]:
+          - generic [ref=f1e28]: C
+          - generic [ref=f1e29]: l
+          - generic [ref=f1e30]: a
+          - generic [ref=f1e31]: u
+          - generic [ref=f1e32]: d
+          - generic [ref=f1e33]: e
+        - generic [ref=f1e34]:
+          - generic [ref=f1e35]: B
+          - generic [ref=f1e36]: u
+          - generic [ref=f1e37]: i
+          - generic [ref=f1e38]: l
+          - generic [ref=f1e39]: t
+        - generic [ref=f1e40]:
+          - generic [ref=f1e41]: T
+          - generic [ref=f1e42]: h
+          - generic [ref=f1e43]: i
+          - generic [ref=f1e44]: s
+          - generic [ref=f1e45]: "?"
+      - paragraph [ref=f1e46]: A single prompt. A cinematic video generated on the fly, scrubbed frame-by-frame by your scroll. No edits. No timeline. Just scroll.
+      - generic [ref=f1e47]: Drava Nova · Build the Future
+    - generic [ref=f1e49]:
+      - generic [ref=f1e50]: The Experience
+      - heading "Every pixel is driven by your scroll." [level=2] [ref=f1e51]
+      - paragraph [ref=f1e52]: The film in the background isn't playing on a loop — its timeline is welded to your scrollbar. Scroll down and the world drifts forward through the neon skyline. Scroll up and time runs in reverse. You are the playhead.
+    - generic [ref=f1e53]:
+      - generic [ref=f1e54]: How it was made
+      - heading "One prompt. A whole pipeline." [level=2] [ref=f1e55]
+      - generic [ref=f1e56]:
+        - generic [ref=f1e57]:
+          - text: "01"
+          - generic [ref=f1e58]: 🖼️
+          - heading "Concept Art" [level=3] [ref=f1e59]
+          - paragraph [ref=f1e60]: Nano Banana renders a 16:9 cinematic keyframe of the young inventor and his spark-bot.
+        - generic [ref=f1e61]:
+          - text: "02"
+          - generic [ref=f1e62]: 🎬
+          - heading "Seedance Video" [level=3] [ref=f1e63]
+          - paragraph [ref=f1e64]: The still is animated into a 6-second drift — parallax, embers, and a breathing camera.
+        - generic [ref=f1e65]:
+          - text: "03"
+          - generic [ref=f1e66]: 🧵
+          - heading "Scroll Scrub" [level=3] [ref=f1e67]
+          - paragraph [ref=f1e68]:
+            - text: requestAnimationFrame maps scroll position to
+            - code [ref=f1e69]: video.currentTime
+            - text: with smoothing.
+        - generic [ref=f1e70]:
+          - text: "04"
+          - generic [ref=f1e71]: ✨
+          - heading "Cinematic Layer" [level=3] [ref=f1e72]
+          - paragraph [ref=f1e73]: Film grain, vignette, drifting particles and per-letter physics finish the frame.
+    - generic [ref=f1e74]:
+      - generic [ref=f1e75]: By the numbers
+      - heading "Built in one conversation." [level=2] [ref=f1e76]
+      - generic [ref=f1e77]:
+        - generic [ref=f1e78]:
+          - generic [ref=f1e79]: "0"
+          - generic [ref=f1e80]: Prompt
+        - generic [ref=f1e81]:
+          - generic [ref=f1e82]: "0"
+          - generic [ref=f1e83]: Video
+        - generic [ref=f1e84]:
+          - generic [ref=f1e85]: "0"
+          - generic [ref=f1e86]: Scrub Rate
+        - generic [ref=f1e87]:
+          - generic [ref=f1e88]: "0"
+          - generic [ref=f1e89]: Claude Built
+    - generic [ref=f1e90]:
+      - generic [ref=f1e91]: The Answer
+      - heading "Yes. Claude built this." [level=2] [ref=f1e92]
+      - paragraph [ref=f1e93]: From concept art to a scroll-scrubbed cinematic — imagined, generated, and coded end to end. Welcome to Drava Nova.
+      - button "↑ Replay from the top" [ref=f1e94] [cursor=pointer]
+      - generic [ref=f1e95]: Drava Nova World · Made with Claude + Higgsfield
