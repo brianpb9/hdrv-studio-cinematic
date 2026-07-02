@@ -1,0 +1,64 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic [ref=e5]:
+      - generic [ref=e6]: DRAVA NOVA
+      - paragraph [ref=e7]: A cinematic Higgsfield video and a live Three.js world, layered into one scroll. Real footage for depth — real-time GPU for the rest. Built in one session with Claude.
+      - generic [ref=e8]: ✦ AI VIDEO × REAL-TIME 3D ✦
+    - generic [ref=e10]:
+      - generic [ref=e11]: 01 · EXPLORE
+      - heading "Enter the Neon City" [level=2] [ref=e12]:
+        - text: Enter the
+        - text: Neon City
+      - paragraph [ref=e13]: A young inventor and his robot companion navigate the sprawling neon metropolis. Cinematic footage drifts behind — every skyscraper and glowing circuit rendered live in front.
+    - generic [ref=e15]:
+      - generic [ref=e16]: 02 · BUILD
+      - heading "Forging the Future" [level=2] [ref=e17]:
+        - text: Forging the
+        - text: Future
+      - paragraph [ref=e18]: Massive mechanical arms assemble wonders in the orbital workshops. Sparks fly, gears turn — your scroll is the engine driving the camera through both layers.
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: "0"
+        - generic [ref=e23]: Polygons
+      - generic [ref=e24]:
+        - generic [ref=e25]: "0"
+        - generic [ref=e26]: AI Agents
+      - generic [ref=e27]:
+        - generic [ref=e28]: "0"
+        - generic [ref=e29]: Active IPs
+      - generic [ref=e30]:
+        - generic [ref=e31]: "0"
+        - generic [ref=e32]: FPS Target
+    - generic [ref=e34]:
+      - generic [ref=e35]: 03 · SOAR
+      - heading "Riding the Storm" [level=2] [ref=e36]:
+        - text: Riding the
+        - text: Storm
+      - paragraph [ref=e37]: Through golden clouds and past floating islands — the mechanical dragon banks hard. Cinematic sun behind, live particles in front. Every vertex calculated on your GPU.
+    - generic [ref=e39]:
+      - generic [ref=e40]: THE PIPELINE
+      - heading "One Prompt. Two Layers." [level=2] [ref=e41]:
+        - text: One Prompt.
+        - text: Two Layers.
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: 🎬
+          - heading "Generate" [level=3] [ref=e45]
+          - paragraph [ref=e46]: Higgsfield Seedance turns one image into an 8-second cinematic push-in.
+        - generic [ref=e47]:
+          - generic [ref=e48]: ⚡
+          - heading "Build" [level=3] [ref=e49]
+          - paragraph [ref=e50]: Claude writes Three.js shaders, geometry, and scroll-reactive logic on top.
+        - generic [ref=e51]:
+          - generic [ref=e52]: 🔮
+          - heading "Layer" [level=3] [ref=e53]
+          - paragraph [ref=e54]: Video for depth, real-time GPU for interactivity — composited into one scroll.
+    - generic [ref=e55]:
+      - heading "Yes. Claude Built This." [level=2] [ref=e56]:
+        - text: Yes.
+        - text: Claude Built This.
+      - link "hello@hdrv.studio" [ref=e57] [cursor=pointer]:
+        - /url: mailto:hello@hdrv.studio
+    - contentinfo [ref=e58]:
+      - paragraph [ref=e59]: © 2026 HDRV Studio · Jakarta · Higgsfield Seedance video + real-time Three.js, layered with Claude
+  - generic [ref=e60]: SCROLL TO EXPLORE

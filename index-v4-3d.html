@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>DRAVA NOVA — Build the Future</title>
-<meta name="description" content="Cinematic AI video + real-time 3D WebGL, layered. Scroll-driven. Built in one session with Claude.">
+<meta name="description" content="Real-time 3D rendering. Scroll-driven. One prompt. Claude built this.">
 <meta property="og:title" content="DRAVA NOVA — Build the Future">
-<meta property="og:description" content="Higgsfield Seedance video + real-time Three.js, layered into one scroll experience.">
+<meta property="og:description" content="Real-time 3D scroll experience. Built in one session with Claude.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ff8a2b'/><text x='50%25' y='58%25' text-anchor='middle' fill='white' font-family='system-ui' font-weight='900' font-size='20'>D</text></svg>">
@@ -20,18 +20,8 @@
 html{scroll-behavior:auto}
 body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* Cinematic video background (Higgsfield Seedance) — sits BEHIND the 3D canvas */
-#bgvideo{position:fixed;inset:0;z-index:0;overflow:hidden;background:#03050a}
-#bgvideo video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;
-  transform:translate(-50%,-50%) scale(1.06);object-fit:cover;
-  opacity:.42;filter:saturate(1.15) contrast(1.05)}
-/* tint + vignette so the dimmed video reads as atmospheric depth, not a competing layer */
-#bgvideo::after{content:"";position:absolute;inset:0;
-  background:radial-gradient(ellipse at 50% 42%,rgba(3,5,10,0) 30%,rgba(3,5,10,.78) 100%),
-             linear-gradient(180deg,rgba(3,5,10,.35),rgba(3,5,10,.15) 40%,rgba(3,5,10,.55))}
-
-/* Real-time 3D canvas — layered ON TOP of the video (transparent clear) */
-#c3d{position:fixed;inset:0;z-index:1}
+/* 3D Canvas */
+#c3d{position:fixed;inset:0;z-index:0}
 
 /* Vignette + Grain */
 #vfx{position:fixed;inset:0;z-index:2;pointer-events:none;
@@ -106,14 +96,11 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;pos
 
 @media(max-width:768px){.pipe-grid{grid-template-columns:1fr}.stats-wrap{gap:1.5rem}section{padding:8vh 5vw}.hero-title{font-size:26px}}
 @media(max-width:480px){.cap h2{font-size:20px}.stat .v{font-size:24px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}#c3d{display:none}#bgvideo video{opacity:.55}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}#c3d{display:none}}
 </style>
 </head>
 <body>
 
-<div id="bgvideo" aria-hidden="true">
-  <video src="video-hero.mp4" autoplay muted loop playsinline poster="poster.png"></video>
-</div>
 <canvas id="c3d"></canvas>
 <div id="vfx" aria-hidden="true"></div>
 <div id="grain" aria-hidden="true"></div>
@@ -123,16 +110,16 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;pos
 
 <section id="hero">
   <div class="hero-title">DRAVA NOVA</div>
-  <p class="hero-sub reveal">A cinematic Higgsfield video and a live Three.js world, layered into one scroll. Real footage for depth — real-time GPU for the rest. Built in one session with Claude.</p>
-  <div class="badge reveal">✦ AI VIDEO × REAL-TIME 3D ✦</div>
+  <p class="hero-sub reveal">Real-time 3D. Every polygon driven by your scroll. No video. No timeline. Pure shader magic — built in one session with Claude.</p>
+  <div class="badge reveal">✦ REAL-TIME RENDERING ✦</div>
 </section>
 
 <section class="right">
-  <div class="cap reveal"><div class="n">01 · EXPLORE</div><h2>Enter the<br>Neon City</h2><p>A young inventor and his robot companion navigate the sprawling neon metropolis. Cinematic footage drifts behind — every skyscraper and glowing circuit rendered live in front.</p></div>
+  <div class="cap reveal"><div class="n">01 · EXPLORE</div><h2>Enter the<br>Neon City</h2><p>A young inventor and his robot companion navigate the sprawling neon metropolis. Every skyscraper, every glowing circuit — rendered in real time.</p></div>
 </section>
 
 <section>
-  <div class="cap reveal"><div class="n">02 · BUILD</div><h2>Forging the<br>Future</h2><p>Massive mechanical arms assemble wonders in the orbital workshops. Sparks fly, gears turn — your scroll is the engine driving the camera through both layers.</p></div>
+  <div class="cap reveal"><div class="n">02 · BUILD</div><h2>Forging the<br>Future</h2><p>Massive mechanical arms assemble wonders in the orbital workshops. Sparks fly, gears turn — your scroll is the engine.</p></div>
 </section>
 
 <section style="justify-content:center">
@@ -145,17 +132,17 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;pos
 </section>
 
 <section class="right">
-  <div class="cap reveal"><div class="n">03 · SOAR</div><h2>Riding the<br>Storm</h2><p>Through golden clouds and past floating islands — the mechanical dragon banks hard. Cinematic sun behind, live particles in front. Every vertex calculated on your GPU.</p></div>
+  <div class="cap reveal"><div class="n">03 · SOAR</div><h2>Riding the<br>Storm</h2><p>Through golden clouds and past floating islands — the mechanical dragon banks hard. Every vertex calculated on your GPU.</p></div>
 </section>
 
 <section style="align-items:center">
   <div class="reveal" style="text-align:center;max-width:700px">
     <div class="n" style="text-align:center">THE PIPELINE</div>
-    <h2 style="font-family:'Syncopate',sans-serif;font-size:clamp(20px,4vw,38px);text-transform:uppercase;letter-spacing:.03em;margin-bottom:36px">One Prompt.<br>Two Layers.</h2>
+    <h2 style="font-family:'Syncopate',sans-serif;font-size:clamp(20px,4vw,38px);text-transform:uppercase;letter-spacing:.03em;margin-bottom:36px">One Prompt.<br>Infinite Polygons.</h2>
     <div class="pipe-grid">
-      <div class="pipe-card"><div class="ic">🎬</div><h3>Generate</h3><p>Higgsfield Seedance turns one image into an 8-second cinematic push-in.</p></div>
-      <div class="pipe-card"><div class="ic">⚡</div><h3>Build</h3><p>Claude writes Three.js shaders, geometry, and scroll-reactive logic on top.</p></div>
-      <div class="pipe-card"><div class="ic">🔮</div><h3>Layer</h3><p>Video for depth, real-time GPU for interactivity — composited into one scroll.</p></div>
+      <div class="pipe-card"><div class="ic">🎨</div><h3>Concept</h3><p>AI generates scene composition, lighting direction, and camera path.</p></div>
+      <div class="pipe-card"><div class="ic">⚡</div><h3>Build</h3><p>Claude writes Three.js shaders, geometry, and scroll-reactive logic.</p></div>
+      <div class="pipe-card"><div class="ic">🔮</div><h3>Render</h3><p>Real-time GPU rendering at 60fps. Every pixel computed live.</p></div>
     </div>
   </div>
 </section>
@@ -165,7 +152,7 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;pos
   <a href="mailto:hello@hdrv.studio" class="cta-btn reveal">hello@hdrv.studio</a>
 </section>
 
-<footer><p>© 2026 HDRV Studio · Jakarta · Higgsfield Seedance video + real-time Three.js, layered with Claude</p></footer>
+<footer><p>© 2026 HDRV Studio · Jakarta · Real-time rendered with Three.js + Claude</p></footer>
 </div>
 
 <div class="hint" id="hint"><div class="mouse"></div>SCROLL TO EXPLORE</div>
@@ -175,16 +162,13 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;pos
 
 // ===== SCENE SETUP =====
 const scene=new THREE.Scene();
-// NOTE: no opaque scene.background — the renderer clears to transparent so the
-// cinematic video behind the canvas shows through the gaps in the 3D geometry.
-scene.background=null;
+scene.background=new THREE.Color('#03050a');
 scene.fog=new THREE.FogExp2('#03050a',.00012);
 
 const camera=new THREE.PerspectiveCamera(60,1,.1,200);
 camera.position.set(0,3,22);
 
-const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('c3d'),antialias:true,alpha:true});
-renderer.setClearColor(0x000000,0); // fully transparent clear -> video visible behind
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('c3d'),antialias:true,alpha:false});
 renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
 renderer.shadowMap.enabled=true;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;
@@ -272,18 +256,12 @@ let scrollProgress=0,targetProgress=0;
 const contentEl=document.getElementById('content');
 const hintEl=document.getElementById('hint');
 const progressEl=document.getElementById('progress');
-const bgVideoEl=document.querySelector('#bgvideo video');
 
 window.addEventListener('scroll',()=>{
   const sh=contentEl.scrollHeight-window.innerHeight;
   targetProgress=sh>0?Math.min(1,Math.max(0,window.scrollY/sh)):0;
   if(window.scrollY>80)hintEl.style.opacity='0';else hintEl.style.opacity='1';
 });
-
-// Some browsers block autoplay until interaction — nudge playback on first input.
-function kickVideo(){if(bgVideoEl&&bgVideoEl.paused){bgVideoEl.play().catch(()=>{})}}
-window.addEventListener('pointerdown',kickVideo,{once:true});
-window.addEventListener('scroll',kickVideo,{once:true});
 
 // ===== COUNTER =====
 let counted=false;
@@ -319,12 +297,6 @@ function animate(){
   camera.position.lerp(new THREE.Vector3(camX,camY,camZ),2*dt);
   camera.lookAt(Math.cos(scrollProgress*Math.PI)*3,scrollProgress*3-1,0);
 
-  // Parallax the cinematic video with scroll for extra depth against the 3D layer
-  if(bgVideoEl){
-    const par=-scrollProgress*6; // subtle vertical drift
-    bgVideoEl.style.transform='translate(-50%,calc(-50% + '+par+'vh)) scale('+(1.06+scrollProgress*.06)+')';
-  }
-
   // Rotate rings based on scroll
   rings.forEach((r,i)=>{
     r.rotation.z+=dt*(.3+i*.1)*(1+scrollProgress*3);
@@ -345,8 +317,9 @@ function animate(){
   particles.rotation.x+=dt*.04;
   particles.material.opacity=.3+.3*scrollProgress;
 
-  // Fog color shifts with scroll (background stays transparent so video shows through)
+  // Sky color shifts with scroll
   const skyHue=.65-scrollProgress*.15;
+  scene.background=new THREE.Color().setHSL(skyHue,.8,.02+.03*scrollProgress);
   scene.fog=new THREE.FogExp2(new THREE.Color().setHSL(skyHue,.6,.02+.04*scrollProgress),.00012);
 
   // Sun intensity shifts
