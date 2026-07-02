@@ -1,9 +1,7 @@
-::1 - - [02/Jul/2026 08:53:04] "GET /index.html HTTP/1.1" 200 -
-::1 - - [02/Jul/2026 08:53:15] "GET /index.html HTTP/1.1" 200 -
-::1 - - [02/Jul/2026 08:53:15] "GET /poster.png HTTP/1.1" 200 -
-::1 - - [02/Jul/2026 08:53:15] "GET /video.mp4 HTTP/1.1" 200 -
-::1 - - [02/Jul/2026 08:53:15] code 404, message File not found
-::1 - - [02/Jul/2026 08:53:15] "GET /favicon.ico HTTP/1.1" 404 -
-::1 - - [02/Jul/2026 08:54:33] "GET /index.html HTTP/1.1" 200 -
-::1 - - [02/Jul/2026 08:54:33] "GET /poster.png HTTP/1.1" 304 -
-::1 - - [02/Jul/2026 08:54:33] "GET /video.mp4 HTTP/1.1" 200 -
+Serving HTTP on :: port 8099 (http://[::]:8099/) ...
+::1 - - [02/Jul/2026 12:27:54] "GET /index.html HTTP/1.1" 200 -
+::1 - - [02/Jul/2026 12:27:58] "GET /index.html HTTP/1.1" 200 -
+::1 - - [02/Jul/2026 12:27:58] "GET /poster-hero.png HTTP/1.1" 200 -
+::1 - - [02/Jul/2026 12:27:58] "GET /video-hero.mp4 HTTP/1.1" 304 -
+::1 - - [02/Jul/2026 12:27:59] "GET /poster-poppu.png HTTP/1.1" 200 -
+::1 - - [02/Jul/2026 12:27:59] "GET /poster-dravanova.png HTTP/1.1" 200 -

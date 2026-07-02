@@ -1,0 +1,111 @@
+- generic [active] [ref=e1]:
+  - navigation:
+    - generic [ref=e5]: HDRV
+    - generic [ref=e6]:
+      - link "Games" [ref=e7] [cursor=pointer]:
+        - /url: "#games"
+      - link "Studio" [ref=e8] [cursor=pointer]:
+        - /url: "#studio"
+      - link "Pipeline" [ref=e9] [cursor=pointer]:
+        - /url: "#pipeline"
+      - link "Contact" [ref=e10] [cursor=pointer]:
+        - /url: "#cta"
+  - generic:
+    - generic [ref=e11]:
+      - heading "HDRV Studio" [level=1] [ref=e12]:
+        - generic [ref=e13]: H
+        - generic [ref=e14]: D
+        - generic [ref=e15]: R
+        - generic [ref=e16]: V
+        - generic [ref=e18]: S
+        - generic [ref=e19]: T
+        - generic [ref=e20]: U
+        - generic [ref=e21]: D
+        - generic [ref=e22]: I
+        - generic [ref=e23]: O
+      - generic [ref=e24]: Indonesia · AI-Native Game Studio
+      - paragraph [ref=e25]: We build games for the next generation. Poppu World × Drava Nova. 24 AI agents. One studio.
+      - generic [ref=e27]: ✦ BUILT WITH CLAUDE ✦
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: 01 · The Worlds
+        - heading "Two Universes" [level=2] [ref=e31]
+      - generic [ref=e32]:
+        - article [ref=e33]:
+          - generic [ref=e36]:
+            - generic [ref=e37]: Poppu World
+            - heading "Poppu World" [level=3] [ref=e38]:
+              - text: Poppu
+              - text: World
+            - generic [ref=e39]:
+              - generic [ref=e40]: 12+ Learning Games
+              - generic [ref=e41]: Ages 2–5
+              - generic [ref=e42]: Web + Mobile
+        - article [ref=e43]:
+          - generic [ref=e46]:
+            - generic [ref=e47]: Drava Nova
+            - heading "Drava Nova" [level=3] [ref=e48]:
+              - text: Drava
+              - text: Nova
+            - generic [ref=e49]:
+              - generic [ref=e50]: New IP
+              - generic [ref=e51]: Coming 2026
+              - generic [ref=e52]: Adventure
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e55]: 02 · The Studio
+        - heading "24 AI Agents. One Pipeline." [level=2] [ref=e56]:
+          - text: 24 AI Agents.
+          - text: One Pipeline.
+        - paragraph [ref=e57]: A full studio org chart — creative direction, art, animation, audio, engineering, QA — run as autonomous AI agents, orchestrated end to end.
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]: "0"
+          - generic [ref=e61]: Games
+        - generic [ref=e62]:
+          - generic [ref=e63]: "0"
+          - generic [ref=e64]: AI Agents
+        - generic [ref=e65]:
+          - generic [ref=e66]: "0"
+          - generic [ref=e67]: IP Worlds
+        - generic [ref=e68]:
+          - generic [ref=e69]: 0%
+          - generic [ref=e70]: Claude-Built
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e73]: 03 · The Pipeline
+        - heading "Idea to Ship" [level=2] [ref=e74]
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - generic [ref=e77]: Step 01
+          - generic [ref=e78]: ✶
+          - heading "Creative Direction" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Vision, canon, and the world-class bar — set before a single asset is made.
+        - generic [ref=e81]:
+          - generic [ref=e82]: Step 02
+          - generic [ref=e83]: ⚡
+          - heading "Rapid Build" [level=3] [ref=e84]
+          - paragraph [ref=e85]: Agents generate art, animation, audio, and code in parallel — a full team at once.
+        - generic [ref=e86]:
+          - generic [ref=e87]: Step 03
+          - generic [ref=e88]: ◎
+          - heading "Quality Review" [level=3] [ref=e89]
+          - paragraph [ref=e90]: An independent review board scores every build against the category leader.
+        - generic [ref=e91]:
+          - generic [ref=e92]: Step 04
+          - generic [ref=e93]: ➤
+          - heading "Ship & Learn" [level=3] [ref=e94]
+          - paragraph [ref=e95]: Launch, measure retention, and feed the data straight back into the next build.
+    - generic [ref=e96]:
+      - heading "Let us build something magical." [level=2] [ref=e97]:
+        - text: Let us build
+        - text: something magical.
+      - paragraph [ref=e98]: Kids entertainment, made at the speed of imagination. Tell us what world you want to build.
+      - link "hello@hdrv.studio" [ref=e99] [cursor=pointer]:
+        - /url: mailto:hello@hdrv.studio
+    - contentinfo [ref=e100]:
+      - generic [ref=e101]: HDRV STUDIO
+      - paragraph [ref=e102]:
+        - text: © 2026 HDRV Studio · Jakarta, Indonesia · Poppu World × Drava Nova
+        - text: Cinematic footage by Higgsfield Seedance · Real-time 3D with Three.js · Built with Claude
+  - generic [ref=e103]: Scroll to explore
